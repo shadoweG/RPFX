@@ -20,15 +20,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func updateStatus() {
         debugPrint("updating Rich Presence status")
-
+        
+        print(runAPScript(.documentNames))
+        print(runAPScript(.windowNames))
+        
         var rp = RichPresence()
         let fn = getActiveFilename()
         let ws = getActiveWorkspace()
 
         // determine file type
+        // reconising file type only works on playgrounds for some reason
         if let fileName = fn {
             rp.details = "Editing \(fileName)"
-
             // do we recognise this file type?
             if let fileExt = getFileExt(fileName), discordRPImageKeys.contains(fileExt) {
                 rp.assets.largeImage = fileExt

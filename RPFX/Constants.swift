@@ -11,7 +11,8 @@ import Foundation
 let debug = true
 
 let xcodeBundleId = "com.apple.dt.Xcode"
-let discordBundleId = "com.hnc.Discord"
+//if you use stable discord: let discordBundleId = "com.hnc.Discord"
+let discordBundleId = "com.hnc.DiscordPTB"
 
 // how often we check Xcode for a status update
 let statusRefreshInterval = 5.0 // seconds
@@ -38,18 +39,12 @@ let xcodeUntitledWorkspace = "Untitled"
     If you're using your own Discord App, update this as needed.
 */
 
-let discordClientId = "700358131481444403"
+let discordClientId = "959768440518881281"
 
 // image keys of supported file types
 let discordRPImageKeys = [
     "swift",
-    "playground",
-    "storyboard",
-    "xcodeproj",
-    "h",
-    "m",
-    "cpp",
-    "c",
+    "playground"
 ]
 
 // fallback image for unsupported file types
