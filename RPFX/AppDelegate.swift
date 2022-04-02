@@ -21,9 +21,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func updateStatus() {
         debugPrint("updating Rich Presence status")
         
-        print(runAPScript(.documentNames))
-        print(runAPScript(.windowNames))
-        
         var rp = RichPresence()
         let fn = getActiveFilename()
         let ws = getActiveWorkspace()

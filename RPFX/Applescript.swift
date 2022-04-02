@@ -8,6 +8,7 @@
 
 import Foundation
 import Cocoa
+import SwiftUI
 
 enum APScripts: String {
     case windowNames = "return name of windows"
@@ -50,6 +51,7 @@ func runAPScript(_ s: APScripts) -> [String]? {
 }
 
 func getActiveFilename() -> String? {
+    
     guard let fileNames = runAPScript(.documentNames) else {
         return nil
     }
@@ -57,11 +59,13 @@ func getActiveFilename() -> String? {
     guard let windowNames = runAPScript(.windowNames) else {
         return nil
     }
-
     // find the first window title that matches a filename
     for window in windowNames { // iterate in order: the first window name is the one in focus
-        // check the focused window refers to a file
-        if fileNames.contains(window) {
+        // check the focused window refers to a files
+        
+        let myString = window.components(separatedBy: .newlines)
+        
+        if !fileNames.contains(myString[0]) {
             return window
         }
     }

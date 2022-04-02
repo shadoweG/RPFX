@@ -43,8 +43,43 @@ let discordClientId = "959768440518881281"
 
 // image keys of supported file types
 let discordRPImageKeys = [
+    "c",
+    "cc",
+    "cp",
+    "cpp",
+    "cxx",
+    "developerprofile",
+    "entitlements",
+    "geojson",
+    "glsl",
+    "gpx",
+    "h",
+    "hpp",
+    "m",
+    "make",
+    "md",
+    "mm",
+    "mobileprovision",
+    "mom",
+    "nib",
+    "octest",
+    "playground",
+    "plist",
+    "r",
+    "rb",
+    "rbw",
+    "s",
+    "storyboard",
+    "strings",
     "swift",
-    "playground"
+    "xcappdata",
+    "xcarchive",
+    "xcdatamodel",
+    "xcdatamodeld",
+    "xcodeproj",
+    "xcsnapshots",
+    "xcworkspace",
+    "xib"
 ]
 
 // fallback image for unsupported file types
