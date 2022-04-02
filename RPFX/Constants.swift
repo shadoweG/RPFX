@@ -11,8 +11,8 @@ import Foundation
 let debug = true
 
 let xcodeBundleId = "com.apple.dt.Xcode"
-//if you use stable discord: let discordBundleId = "com.hnc.Discord"
-let discordBundleId = "com.hnc.DiscordPTB"
+let discordBundleId = "com.hnc.Discord"
+let discordPtbBundleId = "com.hnc.DiscordPTB"
 
 // how often we check Xcode for a status update
 let statusRefreshInterval = 5.0 // seconds

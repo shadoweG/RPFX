@@ -90,8 +90,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let runningApps = NSWorkspace.shared.runningApplications
         let xcodeOpen = runningApps.contains(where: {$0.bundleIdentifier == xcodeBundleId})
         let discordOpen = runningApps.contains(where: {$0.bundleIdentifier == discordBundleId})
+        let discordPtbOpen = runningApps.contains(where: {$0.bundleIdentifier == discordPtbBundleId})
 
         if xcodeOpen && discordOpen {
+            debugPrint("Discord Stable")
+            initRPC()
+        } else if xcodeOpen && discordPtbOpen {
+            debugPrint("Discord PTB")
             initRPC()
         } else if rpc != nil {
             deinitRPC()
