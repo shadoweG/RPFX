@@ -22,7 +22,7 @@ And much more! (30 in total)
 RPFX uses [his fork](https://github.com/PKBeam/SwordRPC) of [Azoy's SwordRPC](https://github.com/Azoy/SwordRPC).
 
 ## System Requirements
-- macOS Big Sur (11.0) (Apple Silicon, Intel)
+- macOS Big Sur (11.0-12.3) (Apple Silicon, Intel)
 - Xcode and Discord (Stable or PTB) installed (otherwise this program isn't very useful)
 
 ## Usage

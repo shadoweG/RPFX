@@ -67,7 +67,7 @@ func getActiveFilename() -> String? {
         
         if !fileNames.contains(myString[0]) {
             return window
-        }
+            }
     }
 
     return nil

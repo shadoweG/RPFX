@@ -24,6 +24,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         var rp = RichPresence()
         let fn = getActiveFilename()
         let ws = getActiveWorkspace()
+        
+        //Xcode logo
+        rp.assets.largeImage = discordRPImageKeyXcode
 
         // determine file type
         // reconising file type only works on playgrounds for some reason
@@ -31,9 +34,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             rp.details = "Editing \(fileName)"
             // do we recognise this file type?
             if let fileExt = getFileExt(fileName), discordRPImageKeys.contains(fileExt) {
-                rp.assets.largeImage = fileExt
+                rp.assets.smallImage = fileExt
             } else {
-                rp.assets.largeImage = discordRPImageKeyDefault
+                rp.assets.smallImage = discordRPImageKeyDefault
             }
         }
 
@@ -43,9 +46,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
 
         // Xcode was just launched?
-        if fn == nil && ws == nil {
+        if fn == "" && ws == nil {
             rp.assets.largeImage = discordRPImageKeyXcode
+            rp.assets.smallImage = nil
             rp.details = "No file open"
+        }
+        
+        //Xcode is in Playground?
+        if fn == nil, let workspace = ws {
+            rp.assets.largeImage = discordRPImageKeyXcode
+            rp.assets.smallImage = discordRPImageKeys[20]
+            rp.state = "Editing \(withoutFileExt(workspace))" + ".playground"
         }
 
         // set timestamps
